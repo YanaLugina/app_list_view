@@ -34,8 +34,8 @@ Widget _myListView() {
   return ListView(
     padding: EdgeInsets.all(8.0),
     // shrinkWrap: true, // very heavy, need many recalculation actions, do not use this
-    scrollDirection: Axis.horizontal,
-    itemExtent: 300,  // GOOD, need to use, light for core ! this set max width for children when Axis.horizontal, or max height when Axis.vertical
+    // scrollDirection: Axis.horizontal,
+    // itemExtent: 300,  // GOOD, need to use, light for core ! this set max width for children when Axis.horizontal, or max height when Axis.vertical
     children: <Widget>[
       ListTile(
         title:Text('Sun'),
