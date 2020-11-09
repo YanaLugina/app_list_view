@@ -30,7 +30,7 @@ class MyListView extends StatelessWidget {
   }
 }
 
-Widget _myListView() {
+/*Widget _myListView() {
   return ListView(
     padding: EdgeInsets.all(8.0),
     // shrinkWrap: true, // very heavy, need many recalculation actions, do not use this
@@ -60,5 +60,22 @@ Widget _myListView() {
         onTap:() => {},
       ),
     ],
+  );
+}*/
+
+Widget _myListView() {
+  final List<String> items = List<String>.generate(10000, (i) => 'item $i');
+
+  return ListView.builder(
+    itemCount: items.length,
+    itemBuilder: (context, index) {
+      return Card(
+        child: ListTile(
+          title: Text('${items[index]}'),
+          leading: Icon(Icons.insert_photo, color: Colors.red),
+          trailing: Icon(Icons.keyboard_arrow_right),
+        ),
+      );
+    },
   );
 }
