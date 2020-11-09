@@ -63,7 +63,7 @@ class MyListView extends StatelessWidget {
   );
 }*/
 
-Widget _myListView() {
+/*Widget _myListView() {
   final List<String> items = List<String>.generate(10000, (i) => 'item $i');
 
   return ListView.builder(
@@ -77,5 +77,35 @@ Widget _myListView() {
         ),
       );
     },
+  );
+}*/
+
+Widget _myListView() {
+  final List<String> items = List<String>.generate(10000, (i) => 'item $i');
+
+  return ListView.separated(
+    itemCount: items.length,
+    padding: EdgeInsets.all(0),
+    itemBuilder: (context, index) {
+      return Card(
+        child: ListTile(
+          title: Text('${items[index]}'),
+          leading: Icon(Icons.insert_photo, color: Colors.red),
+          trailing: Icon(Icons.keyboard_arrow_right),
+        ),
+      );
+    },
+    separatorBuilder: (BuildContext context, int index) => Container(
+      padding: EdgeInsets.all(5.0),
+      child: SizedBox(
+        height: 20,
+        child: Divider(
+          thickness: 5.0,
+          indent: 70.0,
+          endIndent: 70.0,
+          color: Colors.grey.shade300,
+        ),
+      ),
+    ),
   );
 }
